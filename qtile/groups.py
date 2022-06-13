@@ -94,6 +94,9 @@ for i in groups:
             desc="Switch to & move focused window to group {}".format(i.name)),
         Key([mod1, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
             desc="Switch to & move focused window to group {}".format(i.name)),
+        Key([mod], "[", lazy.screen.prev_group(skip_empty=False)), # cycle left
+        Key([mod], "]", lazy.screen.next_group(skip_empty=False)), #cycle right
+
     ])
 
 
